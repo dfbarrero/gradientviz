@@ -183,6 +183,9 @@ for metric in [x.lower() for x in selectedMetrics]:
 
     if contour:
         cont = go.Figure(data=[go.Contour(x=y, y=y, z=z, colorscale=colorscale)])
+        cont.update_layout(autosize=False,
+                 width=500, height=500,
+                 margin=dict(l=65, r=50, b=65, t=90))
         st.plotly_chart(cont, use_container_witth=True)
 
     mesh = False
